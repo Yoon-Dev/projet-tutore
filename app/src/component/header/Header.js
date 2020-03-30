@@ -1,51 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
+import { useStyles } from '../../utils/styles';
 
 export default function Header() {
-  const classes = useStyles();
 
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Link to="/">
-            <Typography variant="h6" className={classes.title}>
-                Root
-            </Typography>
-          </Link>
-          <Link to="/last-news">
-            <Typography variant="h6" className={classes.title}>
-                LastNews
-            </Typography>
-          </Link>
-          <Link to="/tuto">
-            <Typography variant="h6" className={classes.title}>
-                Tuto
-            </Typography>
-          </Link>
-        </Toolbar>
-      </AppBar>
-    </div>
+    const classes = useStyles();
+    return (
+        <div>
+        <AppBar position="static">
+            <Toolbar>
+                <Grid container>
+                    <Grid item xs={2} md={1} className={classes.logo}>
+                        <Link to="/">
+                            <Typography variant="h6">
+                                Root
+                            </Typography>
+                        </Link>
+                    </Grid>
+                    <Grid item md={1} xs={8} className={classes.itemhead}>   
+                        <Link to="/last-news">
+                            <Typography variant="h6">
+                                LastNews
+                            </Typography>
+                        </Link>
+                    </Grid>
+                    <Grid item md={1} xs={2} className={classes.itemhead}> 
+                        <Link to="/tuto">
+                            <Typography variant="h6">
+                                Tuto
+                            </Typography>
+                        </Link>
+                    </Grid>
+                </Grid>    
+            </Toolbar>
+        </AppBar>
+        </div>
   );
 }
