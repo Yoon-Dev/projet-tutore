@@ -2,10 +2,16 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme) => ({
     // ++++++++++++++++++++++++++++++++++++++++++
+    // UTILS
+    center: {
+        display: 'flex',
+        justifyContent: 'center'  
+    },
+    // ++++++++++++++++++++++++++++++++++++++++++
     // HEADER
     logo:{
         display: 'flex',
-        justifyContent: 'felx-start'
+        justifyContent: 'flex-start'
     },
     itemhead: {
         display: 'flex',
@@ -17,3 +23,5 @@ export const useStyles = makeStyles((theme) => ({
     // FIN header
     // ******************************************
 }));
+
+export const breakpointfakegrid = 600;
