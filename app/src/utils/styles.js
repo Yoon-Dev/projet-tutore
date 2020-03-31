@@ -22,11 +22,16 @@ export const useStyles = makeStyles((theme) => ({
     // ++++++++++++++++++++++++++++++++++++++++++
     // ROOT
     rootcontainer:{
-        // position: 'absolute',
+        position: 'absolute',
         minHeight: '100vh',
         overflow: 'hidden',
         top: '0',
-        zIndex: '-1'
+        zIndex: 'unset',
+        pointerEvents: 'none'
+    },
+    rootRight:{
+        paddingRight: `${marge*3}px`,
+        pointerEvents: 'all'
     },
     // FIN root
     // ******************************************

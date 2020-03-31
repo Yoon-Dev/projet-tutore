@@ -14,7 +14,7 @@ const Root = () => {
             <Grid item md={8} xs={12} className={`${classes.center} ${classes.flexYcenter}`}>
                 <Cool/>
             </Grid>
-            <Grid item md={4} xs={12} className={`${classes.center} ${classes.flexYcenter}`}>
+            <Grid item md={4} xs={12} className={`${classes.center} ${classes.flexYcenter} ${classes.rootRight}`}>
                 <ArticleProvider>
                     <LastNewsShort/>
                 </ArticleProvider>

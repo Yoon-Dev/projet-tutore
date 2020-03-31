@@ -15,14 +15,14 @@ const ShortNews = props => {
                         </Typography>
                     </Link>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={6} className={classes.center}>
                     <Typography color="textSecondary">
                         source: <b>{props.data.source}</b>
                     </Typography>
                 </Grid>
-                <Grid item md={2} xs={6}>
+                <Grid item md={2} xs={6} className={classes.center}>
                     <Typography color="textSecondary">
-                        paru le <b>{props.data.date}</b>
+                        <b>{props.data.date}</b>
                     </Typography>
                 </Grid>
             </Grid>
