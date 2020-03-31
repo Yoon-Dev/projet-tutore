@@ -1,0 +1,51 @@
+import React from 'react';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import { useStyles } from '../../utils/styles';
+
+const News = props => {
+    const classes = useStyles();
+    return(
+        <Grid item md={7} xs={12} className={classes.mnews}>
+            <Card>
+                <CardContent>
+                    <Grid container justify='center' alignItems="flex-end">
+                        <Grid item md={8} xs={12}>
+                            <Typography variant="h4" component="h2">
+                                {props.data.titre}
+                            </Typography>
+                        </Grid>
+                        <Grid item md={2} xs={6}>
+                            <Typography color="textSecondary">
+                                source: <b>{props.data.source}</b>
+                            </Typography>
+                        </Grid>
+                        <Grid item md={2} xs={6}>
+                            <Typography color="textSecondary">
+                                paru le <b>{props.data.date}</b>
+                            </Typography>
+                        </Grid>
+                        <Grid item md={12} xs={12} className={classes.mtext}>
+                            <Typography variant="body1" component="p">
+                                {props.data.text}
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                </CardContent>
+                <Grid container justify='center'>
+                    <Grid item xs={12} className={`${classes.center} ${classes.mbtn}`}>
+                        <CardActions>
+                            <Button variant="contained" color="primary"><a href={props.data.lien} className={classes.link}>Voir l'article en detail</a></Button>
+                        </CardActions>
+                    </Grid>
+                </Grid>
+            </Card>
+        </Grid>
+    )
+}
+
+export default News;

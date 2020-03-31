@@ -1,11 +1,18 @@
 import { makeStyles } from '@material-ui/core/styles';
 
+
+export const marge = 8;
+
 export const useStyles = makeStyles((theme) => ({
     // ++++++++++++++++++++++++++++++++++++++++++
     // UTILS
     center: {
         display: 'flex',
         justifyContent: 'center'  
+    },
+    link: {
+        textDecoration: 'none',
+        color: "white"
     },
     // ++++++++++++++++++++++++++++++++++++++++++
     // HEADER
@@ -22,6 +29,18 @@ export const useStyles = makeStyles((theme) => ({
     },
     // FIN header
     // ******************************************
+    // ++++++++++++++++++++++++++++++++++++++++++
+    // NEWS
+    mnews:{
+        margin: `${marge*2}px 0px ${marge*2}px 0px`
+    },
+    mbtn: {
+        margin: `0px 0px ${marge*2}px 0px`
+    },
+    mtext:{
+        marginTop: `${marge*3}px !important`
+    }
+    
 }));
 
 export const breakpointfakegrid = 600;
