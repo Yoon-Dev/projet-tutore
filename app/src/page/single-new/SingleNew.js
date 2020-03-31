@@ -1,44 +1,43 @@
 import React, { useState, useEffect } from "react";
 import { useNews } from '../../services/Article';
-import ShortNews from '../../component/short-news/ShortNews';
+import News from '../../component/news/News';
 import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-const LastNewsShort = () => {
-
+import { useParams, Link } from "react-router-dom";
+import Button from '@material-ui/core/Button';
+import { useStyles } from '../../utils/styles';
+const SingleNew = () => {
+    const classes = useStyles();
+    const { id } = useParams();
     const [loading, setLoading] = useState(true);
-    const [shortnews, setShortnews] = useState(null);
+    const [news, setNews] = useState(null);
     const {articles} = useNews();
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     useEffect(() => {
         if(articles){
             setLoading(false)
-            setShortnews(createShortNews(articles))
+            setNews(createSingleNew(articles, id))
         }
         return () => {
             console.log('cleanup')
         };
     }, [articles]);
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-// Create Short News
+// Create News
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-    const createShortNews = data => {
-        const datafiltered = Object.keys(data).reverse()
-        const news = Object.keys(datafiltered).map( item => 
-            <ShortNews key={data[item].id} data={data[item]} />          
-        );
+    const createSingleNew = (data, id) => {
+        console.log(id)
+        const news = <News key={data[parseInt(id, 10)].id} data={data[parseInt(id, 10)]} />;
         return news;   
     }
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     return(
         <Grid container justify='center'>
-            <Card>
-                { loading ? "loading..." : shortnews }
-            </Card>
-                
-                
+            { loading ? "loading..." : news }
+            <Grid item xs={12} className={classes.center}>
+                <Button variant="contained" color="secondary"><Link to="/last-news" className={classes.link}>En apprendre plus</Link></Button>
+            </Grid>
         </Grid>
     )
 }
 
-
-export default LastNewsShort;
+export default SingleNew;

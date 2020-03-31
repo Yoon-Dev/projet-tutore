@@ -1,11 +1,7 @@
 import React from 'react';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';import Grid from '@material-ui/core/Grid';
 import { useStyles } from '../../utils/styles';
+import { Link } from 'react-router-dom'
 
 const ShortNews = props => {
     const classes = useStyles();
@@ -13,9 +9,11 @@ const ShortNews = props => {
         <div className={classes.bordersn}>
             <Grid container justify='center' alignItems="flex-end">
                 <Grid item xs={12} className={classes.center}>
-                    <Typography variant="h4" component="h2">
-                        {props.data.titre}
-                    </Typography>
+                    <Link to={`/${props.data.id}`}>
+                        <Typography variant="h4" component="h2">
+                            {props.data.titre}
+                        </Typography>
+                    </Link>
                 </Grid>
                 <Grid item xs={6}>
                     <Typography color="textSecondary">

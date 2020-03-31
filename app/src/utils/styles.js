@@ -14,6 +14,22 @@ export const useStyles = makeStyles((theme) => ({
         textDecoration: 'none',
         color: "white"
     },
+    flexYcenter: {
+        alignItems: 'center'
+    },
+    // FIN utils
+    // ******************************************
+    // ++++++++++++++++++++++++++++++++++++++++++
+    // ROOT
+    rootcontainer:{
+        // position: 'absolute',
+        minHeight: '100vh',
+        overflow: 'hidden',
+        top: '0',
+        zIndex: '-1'
+    },
+    // FIN root
+    // ******************************************
     // ++++++++++++++++++++++++++++++++++++++++++
     // HEADER
     logo:{
@@ -47,8 +63,7 @@ export const useStyles = makeStyles((theme) => ({
     bordersn: {
         borderBottom: "1px solid black",
         borderRadius: "5px"
-    }
-    
+    },
 }));
 
 export const breakpointfakegrid = 600;

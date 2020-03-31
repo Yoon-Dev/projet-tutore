@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Tuto from './page/tuto/Tuto';
 import Root from './page/root/Root';
 import LastNews from './page/last-news/LastNews';
+import SingleNew from './page/single-new/SingleNew';
 import Header from './component/header/Header';
 import { ArticleProvider } from './services/Article';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -25,6 +26,11 @@ function App() {
               <Route path="/last-news">
                 <ArticleProvider>
                   <LastNews/>
+                </ArticleProvider>
+              </Route>
+              <Route path="/:id">
+                <ArticleProvider>
+                  <SingleNew/>
                 </ArticleProvider>
               </Route>
             </Switch>            

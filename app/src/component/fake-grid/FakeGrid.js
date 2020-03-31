@@ -13,6 +13,8 @@ const FakeGrid = () => {
                 </Grid>
             </Fragment>    
         )
+    }else{
+        return(null)
     }
 }
 

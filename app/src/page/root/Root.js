@@ -10,11 +10,11 @@ const Root = () => {
     const classes = useStyles();
 
     return (
-        <Grid container>
-            <Grid item md={8} xs={12} className={classes.center}>
+        <Grid container className={classes.rootcontainer}>
+            <Grid item md={8} xs={12} className={`${classes.center} ${classes.flexYcenter}`}>
                 <Cool/>
             </Grid>
-            <Grid item md={4} xs={12} className={classes.center}>
+            <Grid item md={4} xs={12} className={`${classes.center} ${classes.flexYcenter}`}>
                 <ArticleProvider>
                     <LastNewsShort/>
                 </ArticleProvider>
