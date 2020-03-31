@@ -9,7 +9,6 @@ const LastNews = () => {
     const [news, setNews] = useState(null);
     const {articles} = useNews();
     useEffect(() => {
-        console.log(articles)
         if(articles){
             setLoading(false)
             setNews(createNews(articles))
@@ -21,7 +20,6 @@ const LastNews = () => {
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     const createNews = data => {
-        console.log(data, typeof(data))
         const news = Object.keys(data).map( item => 
             
             <News key={data[item].id} data={data[item]} />

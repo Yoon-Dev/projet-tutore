@@ -8,6 +8,8 @@ import Header from './component/header/Header';
 import { ArticleProvider } from './services/Article';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { marge } from './utils/styles';
+import './App.css';
+
 
 function App() {
   return (

@@ -39,6 +39,14 @@ export const useStyles = makeStyles((theme) => ({
     },
     mtext:{
         marginTop: `${marge*3}px !important`
+    },
+    // FIN news
+    // ******************************************
+    // ++++++++++++++++++++++++++++++++++++++++++
+    // SHORTNEWS
+    bordersn: {
+        borderBottom: "1px solid black",
+        borderRadius: "5px"
     }
     
 }));

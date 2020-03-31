@@ -22,7 +22,7 @@ const useArticles = () =>{
         })
         return () => {
             // cleanup
-            console.log('unmount')
+            console.log('cleanup')
         };
     }, []);
 
