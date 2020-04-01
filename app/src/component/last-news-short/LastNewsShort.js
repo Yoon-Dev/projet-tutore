@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNews } from '../../services/Article';
+import { useStyles } from '../../utils/styles';
 import ShortNews from '../../component/short-news/ShortNews';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -8,6 +9,7 @@ const LastNewsShort = () => {
     const [loading, setLoading] = useState(true);
     const [shortnews, setShortnews] = useState(null);
     const {articles} = useNews();
+    const classes = useStyles();
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     useEffect(() => {
         if(articles){
@@ -31,7 +33,7 @@ const LastNewsShort = () => {
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     return(
         <Grid container justify='center'>
-            <Card>
+            <Card className={classes.boxshadow}>
                 { loading ? "loading..." : shortnews }
             </Card>
                 

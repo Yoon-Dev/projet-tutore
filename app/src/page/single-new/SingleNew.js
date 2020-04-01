@@ -5,7 +5,9 @@ import Grid from '@material-ui/core/Grid';
 import { useParams, Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import { useStyles } from '../../utils/styles';
+
 const SingleNew = () => {
+
     const classes = useStyles();
     const { id } = useParams();
     const [loading, setLoading] = useState(true);
@@ -25,15 +27,14 @@ const SingleNew = () => {
 // Create News
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     const createSingleNew = (data, id) => {
-        console.log(id)
         const news = <News key={data[parseInt(id, 10)].id} data={data[parseInt(id, 10)]} />;
         return news;   
     }
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     return(
-        <Grid container justify='center'>
+        <Grid container justify='center' className={`${classes.drawbg} ${classes.containersingle}`}>
             { loading ? "loading..." : news }
-            <Grid item xs={12} className={classes.center}>
+            <Grid item xs={12} className={`${classes.center} ${classes.sndbtn}`}>
                 <Button variant="contained" color="secondary"><Link to="/last-news" className={classes.link}>En apprendre plus</Link></Button>
             </Grid>
         </Grid>

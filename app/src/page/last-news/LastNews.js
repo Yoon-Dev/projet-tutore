@@ -29,7 +29,7 @@ const LastNews = () => {
         return news;   
     }
     return(
-        <Grid container justify='center' className={classes.texturebg}>
+        <Grid container justify='center' className={classes.drawbg}>
                 { loading ? "loading..." : news }
         </Grid>
     )

@@ -12,10 +12,30 @@ export const useStyles = makeStyles((theme) => ({
     },
     link: {
         textDecoration: 'none',
-        color: "white"
+        color: "white",
+        '& span': {
+            color: 'white'
+        },
     },
     flexYcenter: {
         alignItems: 'center'
+    },
+    texturebg: {
+        backgroundImage: 'url("./img/texture.jpg")',
+        backgroundSize: 'contain',
+        marginTop: `${marge*8}px`,
+    },
+    drawbg: {
+        backgroundImage: 'url("./img/front2.jpg")',
+        backgroundSize: 'cover',
+        paddingTop: `${marge*8}px`,
+    },
+    flexXend: {
+        display: 'flex',
+        justifyContent: 'flex-end !important'
+    },
+    nounderline: {
+        textDecoration: 'none'
     },
     // FIN utils
     // ******************************************
@@ -38,6 +58,11 @@ export const useStyles = makeStyles((theme) => ({
             backgroundPosition: "0% 10%",
             backgroundSize: 'cover',
         },
+    },
+    boxshadow: {
+        boxShadow: "0px 0px 33px 16px rgba(0,0,0,0.2) !important",
+        opacity: "0.9",
+        minWidth: "60%"
     },
     rootRight:{
         pointerEvents: 'all',
@@ -73,17 +98,48 @@ export const useStyles = makeStyles((theme) => ({
         justifyContent: 'flex-start'
     },
     itemhead: {
+        display: 'none',
+        justifyContent: 'flex-end',
+        [theme.breakpoints.up('md')]: {
+            display: 'flex',
+            justifyContent: 'flex-start',
+        },
+        '& button': {
+            [theme.breakpoints.up('md')]: {
+                fontSize: "1.3em"
+            },
+        }
+
+    },
+    menuhide:{
         display: 'flex',
         justifyContent: 'flex-end',
-      [theme.breakpoints.up('md')]: {
-            justifyContent: 'center'
-      }
+        [theme.breakpoints.up('md')]: {
+            display: 'none !important',
+        },
+    },
+    nounderlinebtn: {
+        textDecoration: 'none !important',
+        backgroundImage: 'url("./img/texture.jpg")',
+        minWidth: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        '& button': {
+            fontWeight: 'bold',
+            [theme.breakpoints.up('sm')]: {
+                fontSize: '1.5em !important',
+            },
+        }
+
     },
     navbar: {
         position: 'fixed',
         zIndex: '3',
         right: 0,
-        left: '0'
+        left: '0',
+        '& header': {
+            backgroundColor: "#00000070"
+        }
     },
     // FIN header
     // ******************************************
@@ -158,12 +214,28 @@ export const useStyles = makeStyles((theme) => ({
     // ******************************************
     // ++++++++++++++++++++++++++++++++++++++++++
     // LASTNEWS
-    texturebg: {
-        backgroundImage: 'url("./img/texture.jpg")',
-        backgroundSize: 'contain',
-        marginTop: `${marge*8}px`
-    },
+
     // FIN lastnews
+    // ******************************************
+    // ++++++++++++++++++++++++++++++++++++++++++
+    // SINGLENEWS
+    containersingle: {
+        position: 'absolute',
+        top: '0',
+        bottom: '0',
+        alignItems: 'center'
+    },
+    sndbtn: {
+        alignSelf: 'flex-start',
+        marginBottom: `${marge*2}px`,
+        '& button': {
+            [theme.breakpoints.up('sm')]: {
+                fontSize: "1.5em"
+            },
+        }
+
+    }
+    // FIN singlenews
     // ******************************************
 
 }));

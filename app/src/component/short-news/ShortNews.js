@@ -9,7 +9,7 @@ const ShortNews = props => {
         <div className={classes.bordersn}>
             <Grid container justify='center' alignItems="flex-end">
                 <Grid item xs={12} className={`${classes.center} ${classes.titlelink}`}>
-                    <Link to={`/${props.data.id}`}>
+                    <Link to={`/${props.data.id}`} className={classes.nounderline}>
                         <Typography variant="h5" component="h3">
                             {props.data.titre}
                         </Typography>
