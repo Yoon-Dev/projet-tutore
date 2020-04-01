@@ -15,16 +15,16 @@ const News = props => {
                 <CardContent>
                     <Grid container justify='center' alignItems="flex-end">
                         <Grid item md={8} xs={12}>
-                            <Typography variant="h4" component="h2">
+                            <Typography variant="h4" component="h2" className={classes.titlenews}>
                                 {props.data.titre}
                             </Typography>
                         </Grid>
-                        <Grid item md={2} xs={6}>
+                        <Grid item md={2} xs={6} className={`${classes.center} ${classes.snd}`}>
                             <Typography color="textSecondary">
                                 source: <b>{props.data.source}</b>
                             </Typography>
                         </Grid>
-                        <Grid item md={2} xs={6}>
+                        <Grid item md={2} xs={6} className={`${classes.center} ${classes.snd}`}>
                             <Typography color="textSecondary">
                                 paru le <b>{props.data.date}</b>
                             </Typography>

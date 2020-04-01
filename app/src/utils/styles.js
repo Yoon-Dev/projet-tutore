@@ -28,8 +28,16 @@ export const useStyles = makeStyles((theme) => ({
         top: '0',
         zIndex: 'unset',
         pointerEvents: 'none',
+        backgroundSize: 'cover',
         backgroundImage: 'url("./img/front3.jpg")',
-        backgroundPosition: 'right'
+        [theme.breakpoints.up('sm')]: {
+            backgroundPosition: 'right',
+            backgroundSize: 'auto',
+        },
+        [theme.breakpoints.up('lg')]: {
+            backgroundPosition: "0% 10%",
+            backgroundSize: 'cover',
+        },
     },
     rootRight:{
         pointerEvents: 'all',
@@ -85,10 +93,51 @@ export const useStyles = makeStyles((theme) => ({
         margin: `${marge*2}px 0px ${marge*2}px 0px`
     },
     mbtn: {
-        margin: `0px 0px ${marge*2}px 0px`
+        margin: `0px 0px ${marge*2}px 0px`,
+        '& button': {
+            [theme.breakpoints.up('sm')]: {
+                fontSize: "1.5em !important"
+            },
+            [theme.breakpoints.up('lg')]: {
+                fontSize: "1em !important"
+            },
+        },
     },
     mtext:{
-        marginTop: `${marge*3}px !important`
+        marginTop: `${marge*3}px !important`,
+        '& p': {
+            [theme.breakpoints.up('sm')]: {
+                fontSize: "2em !important"
+            },
+            [theme.breakpoints.up('lg')]: {
+                fontSize: "1.4em !important"
+            },
+        },
+    },
+    titlenews: {
+        marginBottom: `${marge*2}px !important`,
+        textAlign: 'center', 
+            [theme.breakpoints.up('sm')]: {
+                fontSize: "4.125em !important"
+            },
+            [theme.breakpoints.up('lg')]: {
+                fontSize: "3.125em !important",
+                marginBottom: `0px !important`,
+                textAlign: 'left',
+            },
+    },
+    snd: {
+        '& p': {
+            [theme.breakpoints.up('sm')]: {
+                fontSize: "2em !important"
+            },
+            [theme.breakpoints.up('lg')]: {
+                fontSize: "1em !important"
+            },
+        },
+        [theme.breakpoints.up('lg')]: {
+            alignSelf: "center"
+        },
     },
     // FIN news
     // ******************************************
@@ -96,17 +145,27 @@ export const useStyles = makeStyles((theme) => ({
     // SHORTNEWS
     bordersn: {
         borderBottom: "1px dotted #00000070",
-        borderRadius: "5px",
         padding: `${marge*4}px 0px ${marge*4}px 0px`,
         '&:last-child': {
             borderBottom: "none",
-            borderRadius: "0px",
             padding: `${marge*4}px 0px ${marge*4}px 0px`,            
         }
     },
     titlelink: {
         paddingBottom: `${marge}px`
     },
+    // FIN shortnews
+    // ******************************************
+    // ++++++++++++++++++++++++++++++++++++++++++
+    // LASTNEWS
+    texturebg: {
+        backgroundImage: 'url("./img/texture.jpg")',
+        backgroundSize: 'contain',
+        marginTop: `${marge*8}px`
+    },
+    // FIN lastnews
+    // ******************************************
+
 }));
 
 export const breakpointfakegrid = 600;

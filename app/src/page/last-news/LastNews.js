@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import Grid from '@material-ui/core/Grid';
 import { useNews } from '../../services/Article';
 import News from '../../component/news/News';
+import { useStyles } from '../../utils/styles';
 
 const LastNews = () => {
-
+    const classes = useStyles();
     const [loading, setLoading] = useState(true);
     const [news, setNews] = useState(null);
     const {articles} = useNews();
@@ -28,7 +29,7 @@ const LastNews = () => {
         return news;   
     }
     return(
-        <Grid container justify='center'>
+        <Grid container justify='center' className={classes.texturebg}>
                 { loading ? "loading..." : news }
         </Grid>
     )
