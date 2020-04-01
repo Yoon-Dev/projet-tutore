@@ -120,7 +120,6 @@ export const useStyles = makeStyles((theme) => ({
     },
     nounderlinebtn: {
         textDecoration: 'none !important',
-        backgroundImage: 'url("./img/texture.jpg")',
         minWidth: '100%',
         display: 'flex',
         justifyContent: 'center',
@@ -129,8 +128,12 @@ export const useStyles = makeStyles((theme) => ({
             [theme.breakpoints.up('sm')]: {
                 fontSize: '1.5em !important',
             },
-        }
-
+        },
+    },
+    middlebold: {
+        '& button': {
+            fontWeight: '500 !important'
+        },
     },
     navbar: {
         position: 'fixed',
@@ -222,7 +225,6 @@ export const useStyles = makeStyles((theme) => ({
     containersingle: {
         position: 'absolute',
         top: '0',
-        bottom: '0',
         alignItems: 'center'
     },
     sndbtn: {
@@ -233,8 +235,13 @@ export const useStyles = makeStyles((theme) => ({
                 fontSize: "1.5em"
             },
         }
-
-    }
+    },
+    newsbox: {
+        opacity: '0.9',
+        [theme.breakpoints.up('md')]: {
+            opacity: "0.95"
+        },
+    },
     // FIN singlenews
     // ******************************************
 

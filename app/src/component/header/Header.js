@@ -72,7 +72,7 @@ export default function Header() {
                                     </Link>
                                 </MenuItem>
                                 <MenuItem onClick={handleClose}>
-                                    <Link to="/tuto" className={classes.nounderlinebtn}>
+                                    <Link to="/tuto" className={`${classes.middlebold} ${classes.nounderlinebtn}`}>
                                         <Button>Comment vérifié l'information ?</Button>
                                     </Link>
                                 </MenuItem>

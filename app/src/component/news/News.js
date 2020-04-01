@@ -10,8 +10,8 @@ import { useStyles } from '../../utils/styles';
 const News = props => {
     const classes = useStyles();
     return(
-        <Grid item md={7} xs={12} className={classes.mnews}>
-            <Card>
+        <Grid item lg={7} xs={12} className={classes.mnews}>
+            <Card className={classes.newsbox}>
                 <CardContent>
                     <Grid container justify='center' alignItems="flex-end">
                         <Grid item lg={8} xs={12}>
