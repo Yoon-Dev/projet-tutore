@@ -12,7 +12,7 @@ export default function Header() {
 
     const classes = useStyles();
     return (
-        <div id="appbar">
+        <div id="appbar" className={classes.navbar}>
             <AppBar position="static">
                 <Toolbar>
                     <Grid container>

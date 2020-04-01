@@ -27,14 +27,37 @@ export const useStyles = makeStyles((theme) => ({
         overflow: 'hidden',
         top: '0',
         zIndex: 'unset',
-        pointerEvents: 'none'
+        pointerEvents: 'none',
+        backgroundImage: 'url("./img/front3.jpg")',
+        backgroundPosition: 'right'
     },
     rootRight:{
-        paddingRight: `${marge*3}px`,
-        pointerEvents: 'all'
+        pointerEvents: 'all',
+        [theme.breakpoints.up('md')]: {
+            paddingRight: `${marge*3}px`,
+      },
     },
     // FIN root
     // ******************************************
+    // ++++++++++++++++++++++++++++++++++++++++++
+    // COOL
+    titlecool: {
+        padding: `${marge*14}px ${marge*6}px ${marge*14}px ${marge*6}px`,
+        textAlign: 'center',
+        fontFamily: 'showloveregular !important',
+        textShadow: "5px 3px 7px rgb(255, 253, 253)",
+        [theme.breakpoints.up('sm')]: {
+            padding: `${marge*14}px`,
+      },
+      [theme.breakpoints.up('sm')]: {
+        fontSize: '3.6em !important',
+     },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '4.6em !important',
+    }
+    },
+    // FIN cool
+    // ******************************************  
     // ++++++++++++++++++++++++++++++++++++++++++
     // HEADER
     logo:{
@@ -47,6 +70,12 @@ export const useStyles = makeStyles((theme) => ({
       [theme.breakpoints.up('md')]: {
             justifyContent: 'center'
       }
+    },
+    navbar: {
+        position: 'fixed',
+        zIndex: '3',
+        right: 0,
+        left: '0'
     },
     // FIN header
     // ******************************************
@@ -66,8 +95,17 @@ export const useStyles = makeStyles((theme) => ({
     // ++++++++++++++++++++++++++++++++++++++++++
     // SHORTNEWS
     bordersn: {
-        borderBottom: "1px solid black",
-        borderRadius: "5px"
+        borderBottom: "1px dotted #00000070",
+        borderRadius: "5px",
+        padding: `${marge*4}px 0px ${marge*4}px 0px`,
+        '&:last-child': {
+            borderBottom: "none",
+            borderRadius: "0px",
+            padding: `${marge*4}px 0px ${marge*4}px 0px`,            
+        }
+    },
+    titlelink: {
+        paddingBottom: `${marge}px`
     },
 }));
 

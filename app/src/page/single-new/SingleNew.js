@@ -20,7 +20,7 @@ const SingleNew = () => {
         return () => {
             console.log('cleanup')
         };
-    }, [articles]);
+    }, [articles, id]);
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 // Create News
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°

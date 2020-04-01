@@ -8,9 +8,9 @@ const ShortNews = props => {
     return(
         <div className={classes.bordersn}>
             <Grid container justify='center' alignItems="flex-end">
-                <Grid item xs={12} className={classes.center}>
+                <Grid item xs={12} className={`${classes.center} ${classes.titlelink}`}>
                     <Link to={`/${props.data.id}`}>
-                        <Typography variant="h4" component="h2">
+                        <Typography variant="h5" component="h3">
                             {props.data.titre}
                         </Typography>
                     </Link>
@@ -20,7 +20,7 @@ const ShortNews = props => {
                         source: <b>{props.data.source}</b>
                     </Typography>
                 </Grid>
-                <Grid item md={2} xs={6} className={classes.center}>
+                <Grid item xs={6} className={classes.center}>
                     <Typography color="textSecondary">
                         <b>{props.data.date}</b>
                     </Typography>
