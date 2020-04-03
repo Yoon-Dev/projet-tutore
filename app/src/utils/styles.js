@@ -256,8 +256,8 @@ export const useStyles = makeStyles((theme) => ({
     },
     itemtuto: {
         margin: `${marge*4}px 0px ${marge*4}px 0px`,
-        [theme.breakpoints.up('lg')]: {
-            margin: "0"
+        [theme.breakpoints.up('sm')]: {
+            margin: `${marge*20}px 0px ${marge*20}px 0px`,
         },
         '& *': {
             textAlign: "center"
@@ -278,7 +278,36 @@ export const useStyles = makeStyles((theme) => ({
     },
     // FIN tuto
     // ******************************************
-
+    // ++++++++++++++++++++++++++++++++++++++++++
+    // DUMB
+    titledumb: {
+        marginBottom: `${marge*2}px !important`,
+        [theme.breakpoints.up('sm')]: {
+            fontSize: '4.125em !important',
+        },
+        [theme.breakpoints.up('lg')]: {
+            fontSize: '3.125em !important',
+        },
+    },
+    dumbtext: {
+        [theme.breakpoints.up('sm')]: {
+            fontSize: '1.8em !important',
+        }, 
+        [theme.breakpoints.up('lg')]: {
+            fontSize: '1.4em !important',
+        }, 
+    },
+    dumbitem:{
+        [theme.breakpoints.up('md')]: {
+            boxShadow: "0px 0px 60px 32px rgba(0,0,0,0.2) !important",
+        }, 
+        [theme.breakpoints.up('lg')]: {
+            boxShadow: "0px 0px 60px 30px rgba(0,0,0,0.3) !important",
+        }, 
+        
+    },
+    // FIN dumb
+    // ******************************************
 }));
 
 export const breakpointfakegrid = 600;

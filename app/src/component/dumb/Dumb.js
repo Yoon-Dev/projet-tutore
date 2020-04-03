@@ -9,28 +9,28 @@ import { useStyles } from '../../utils/styles';
 const News = props => {
     const classes = useStyles();
     return(
-            <Card className={classes.newsbox}>
-                <CardContent>
-                    <Grid container justify='center' alignItems="flex-end" spacing={8}>
+            <Card className={`${classes.newsbox} ${classes.dumbitem}`}>
+                <Grid container justify='center' alignItems="flex-end">
+                    <Grid item xs={12}>
+                        <CardMedia
+                        component="img"
+                        image={props.img}
+                        title="Jeter les réseaux sociaux"
+                        />                               
+                    </Grid>
+                    <CardContent>
                         <Grid item xs={12} className={`${classes.center} ${classes.snd}`}>
-                            <Typography variant="h5" component="h2" color="textPrimary">
+                            <Typography variant="h5" component="h2" color="textPrimary" className={classes.titledumb}>
                                 {props.titre}
                             </Typography>
                         </Grid>
-                        <Grid item xs={12}>
-                            <CardMedia
-                            component="img"
-                            image={props.img}
-                            title="Jeter les réseaux sociaux"
-                            />                               
-                        </Grid>
-                        <Grid item xs={12} className={`${classes.center} ${classes.snd}`}>
-                            <Typography variant="body1" component="p"color="textSecondary">
+                        <Grid item xs={12} className={`${classes.center}`}>
+                            <Typography variant="body1" component="p"color="textSecondary" className={classes.dumbtext}>
                                 {props.text}
                             </Typography>
                         </Grid>
-                    </Grid>
-                </CardContent>
+                    </CardContent>
+                </Grid>
             </Card>
     )
 }

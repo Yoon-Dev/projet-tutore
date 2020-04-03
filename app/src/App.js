@@ -55,9 +55,9 @@ const theme = createMuiTheme({
     },
     MuiCardMedia: {
       img: {
-        maxHeight: "150px",
+
         [defaultTheme.breakpoints.up('sm')]: {
-          maxHeight: "350px"
+          maxHeight: "400px"
         },
         [defaultTheme.breakpoints.up('lg')]: {
           maxHeight: "450px"
