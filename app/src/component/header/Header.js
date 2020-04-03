@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { useStyles } from '../../utils/styles';
 import IconButton from '@material-ui/core/IconButton';
+import HomeIcon from '@material-ui/icons/Home';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -32,10 +32,13 @@ export default function Header() {
                 <Toolbar>
                     <Grid container>
                         <Grid item xs={2} md={1} className={classes.logo}>
-                            <Link to="/">
-                                <Typography variant="h6">
-                                    Root
-                                </Typography>
+                            <Link to="/" className={classes.link}>
+                                <Button
+                                    color="inherit"
+                                    className={classes.button}
+                                >
+                                    <HomeIcon fontSize="large"/>         
+                                </Button>
                             </Link>
                         </Grid>
                         <Grid item xs={8} md={1} className={classes.itemhead}>   
@@ -77,7 +80,7 @@ export default function Header() {
                                     </Link>
                                 </MenuItem>
                             </Menu>
-                            </Grid>
+                        </Grid>
                     </Grid>    
                 </Toolbar>
             </AppBar>

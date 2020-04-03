@@ -42,7 +42,7 @@ function App() {
     
   );
 }
-
+const defaultTheme = createMuiTheme();
 const theme = createMuiTheme({
   overrides: {
     // Style sheet name ⚛️
@@ -51,6 +51,17 @@ const theme = createMuiTheme({
       root: {
         // Some CSS
         padding: `${marge*4}px ${marge*4}px ${marge*2}px ${marge*4}px`,
+      },
+    },
+    MuiCardMedia: {
+      img: {
+        maxHeight: "150px",
+        [defaultTheme.breakpoints.up('sm')]: {
+          maxHeight: "350px"
+        },
+        [defaultTheme.breakpoints.up('lg')]: {
+          maxHeight: "450px"
+        },
       },
     },
   },

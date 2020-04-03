@@ -84,10 +84,10 @@ export const useStyles = makeStyles((theme) => ({
       },
       [theme.breakpoints.up('sm')]: {
         fontSize: '3.6em !important',
-     },
+        },
       [theme.breakpoints.up('lg')]: {
         fontSize: '4.6em !important',
-    }
+        }
     },
     // FIN cool
     // ******************************************  
@@ -95,7 +95,8 @@ export const useStyles = makeStyles((theme) => ({
     // HEADER
     logo:{
         display: 'flex',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        alignItems: "center"
     },
     itemhead: {
         display: 'none',
@@ -225,7 +226,8 @@ export const useStyles = makeStyles((theme) => ({
     containersingle: {
         position: 'absolute',
         top: '0',
-        alignItems: 'center'
+        alignItems: 'center',
+        minHeight: '100%'
     },
     sndbtn: {
         alignSelf: 'flex-start',
@@ -243,6 +245,38 @@ export const useStyles = makeStyles((theme) => ({
         },
     },
     // FIN singlenews
+    // ******************************************
+    // ++++++++++++++++++++++++++++++++++++++++++
+    // TUTO
+    tutobg: {
+        position: 'absolute',
+        top: '0',
+        backgroundImage: 'url("./img/front2blur45.jpg") !important',
+        padding: `${marge*10}px 0px ${marge*4}px 0px !important`,
+    },
+    itemtuto: {
+        margin: `${marge*4}px 0px ${marge*4}px 0px`,
+        [theme.breakpoints.up('lg')]: {
+            margin: "0"
+        },
+        '& *': {
+            textAlign: "center"
+        },
+    },
+    titletuto: {
+        marginBottom: `${marge*4}px !important`,
+        fontFamily: 'showloveregular !important',
+        textAlign: "center",
+        textShadow: "5px 3px 7px rgb(255, 253, 253, 0.3)",
+        padding: `${marge*14}px ${marge*6}px ${marge*14}px ${marge*6}px`,
+        [theme.breakpoints.up('sm')]: {
+            fontSize: '3.6em !important',
+        },
+          [theme.breakpoints.up('lg')]: {
+            fontSize: '4.6em !important',
+        },
+    },
+    // FIN tuto
     // ******************************************
 
 }));
