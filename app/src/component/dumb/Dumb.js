@@ -5,10 +5,12 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { useStyles } from '../../utils/styles';
+import Zoom from 'react-reveal/Zoom';
 
 const News = props => {
     const classes = useStyles();
     return(
+        <Zoom bottom>
             <Card className={`${classes.newsbox} ${classes.dumbitem}`}>
                 <Grid container justify='center' alignItems="flex-end">
                     <Grid item xs={12}>
@@ -32,6 +34,8 @@ const News = props => {
                     </CardContent>
                 </Grid>
             </Card>
+        </Zoom>
+            
     )
 }
 

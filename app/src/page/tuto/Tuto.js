@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link } from "react-router-dom";
 import Dumb from '../../component/dumb/Dumb';
+import Fade from 'react-reveal/Fade';
 
 const Tuto = () => {
 
@@ -53,7 +54,9 @@ const Tuto = () => {
                 />
             </Grid>
             <Grid item xs={12} className={`${classes.center} ${classes.sndbtn}`}>
-                <Button variant="contained" color="secondary"><Link to="/last-news" className={classes.link}>S'entrainer sur nos articles ?</Link></Button>
+                <Fade bottom>
+                    <Button variant="contained" color="secondary"><Link to="/last-news" className={classes.link}>S'entrainer sur nos articles ?</Link></Button>
+                </Fade>
             </Grid>
         </Grid>
     )
