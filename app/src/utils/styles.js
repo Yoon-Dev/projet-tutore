@@ -37,6 +37,12 @@ export const useStyles = makeStyles((theme) => ({
     nounderline: {
         textDecoration: 'none'
     },
+    childcenter: {
+        '& .react-reveal': {
+            display: 'flex',
+            justifyContent: 'center'
+        },
+    },
     // FIN utils
     // ******************************************
     // ++++++++++++++++++++++++++++++++++++++++++
@@ -249,8 +255,7 @@ export const useStyles = makeStyles((theme) => ({
     // ++++++++++++++++++++++++++++++++++++++++++
     // TUTO
     tutobg: {
-        position: 'absolute',
-        top: '0',
+        // top: '0',
         backgroundImage: 'url("./img/front2blur45.jpg") !important',
         padding: `${marge*10}px 0px ${marge*4}px 0px !important`,
     },

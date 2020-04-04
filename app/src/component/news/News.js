@@ -6,13 +6,12 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { useStyles } from '../../utils/styles';
-import Fade from 'react-reveal/Fade';
 
 const News = props => {
+    console.log(props)
     const classes = useStyles();
     return(
-        <Grid item lg={7} xs={12} className={classes.mnews}>
-            <Fade bottom opposite>
+            <Grid item lg={7} xs={12} className={classes.mnews}>  
                 <Card className={classes.newsbox}>
                     <CardContent>
                         <Grid container justify='center' alignItems="flex-end">
@@ -46,8 +45,7 @@ const News = props => {
                         </Grid>
                     </Grid>
                 </Card>
-            </Fade>  
-        </Grid>
+            </Grid>
     )
 }
 

@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import { useNews } from '../../services/Article';
 import News from '../../component/news/News';
 import { useStyles } from '../../utils/styles';
+import Fade from 'react-reveal/Fade';
 
 const LastNews = () => {
     const classes = useStyles();
@@ -18,19 +19,24 @@ const LastNews = () => {
             console.log('cleanup')
         };
     }, [articles]);
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     const createNews = data => {
         const news = Object.keys(data).map( item => 
             
-            <News key={data[item].id} data={data[item]} />
+            <News key={data[item].id} data={data[item]}/>
             
         );
         return news;   
     }
     return(
-        <Grid container justify='center' className={classes.drawbg}>
+        <Grid container justify='center' className={`${classes.drawbg} ${classes.childcenter}`}>
+            <Fade bottom>          
                 { loading ? "loading..." : news }
+            </Fade>
         </Grid>
     )
 }

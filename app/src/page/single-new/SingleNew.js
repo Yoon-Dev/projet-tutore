@@ -5,6 +5,8 @@ import Grid from '@material-ui/core/Grid';
 import { useParams, Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import { useStyles } from '../../utils/styles';
+import Fade from 'react-reveal/Fade';
+import Jump from 'react-reveal/Jump';
 
 const SingleNew = () => {
 
@@ -27,15 +29,19 @@ const SingleNew = () => {
 // Create News
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     const createSingleNew = (data, id) => {
-        const news = <News key={data[parseInt(id, 10)].id} data={data[parseInt(id, 10)]} />;
+        const news = <News key={data[parseInt(id, 10)].id} data={data[parseInt(id, 10)]}/>;
         return news;   
     }
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     return(
-        <Grid container justify='center' className={`${classes.drawbg} ${classes.containersingle}`}>
-            { loading ? "loading..." : news }
+        <Grid container justify='center' className={`${classes.drawbg} ${classes.containersingle} ${classes.childcenter}`}>
+            <Fade top>
+                { loading ? "loading..." : news }
+            </Fade>    
             <Grid item xs={12} className={`${classes.center} ${classes.sndbtn}`}>
-                <Button variant="contained" color="secondary"><Link to="/last-news" className={classes.link}>En apprendre plus</Link></Button>
+                <Fade bottom>
+                    <Button variant="contained" color="secondary"><Link to="/last-news" className={classes.link}>En apprendre plus</Link></Button>
+                </Fade>
             </Grid>
         </Grid>
     )
