@@ -16,7 +16,7 @@ const Tuto = () => {
         }, delaytrans);
     }, []);
     return (
-            <Grid container justify='center' className={`${classes.tutobg}`}>
+            <Grid container justify='center' className={`${classes.tutobg} ${classes.drawbg}`}>
                 <Grid item xs={12} className={`${classes.center}`}>
                     <Fade top>
                         <Typography variant="h4" component="h1" className={classes.titletuto}>

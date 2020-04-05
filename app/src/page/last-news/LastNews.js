@@ -28,7 +28,8 @@ const LastNews = () => {
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     const createNews = data => {
-        const news = Object.keys(data).map( item => 
+        const datafiltered = Object.keys(data).reverse()
+        const news = Object.keys(datafiltered).map( item => 
             
             <News key={data[item].id} data={data[item]}/>
             

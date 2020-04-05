@@ -51,6 +51,9 @@ export const useStyles = makeStyles((theme) => ({
         left: '0',
         right: '0'
     },
+    textcenter: {
+        textAlign: 'center'
+    },
     // FIN utils
     // ******************************************
     // ++++++++++++++++++++++++++++++++++++++++++
