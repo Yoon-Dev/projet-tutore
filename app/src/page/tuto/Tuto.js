@@ -1,21 +1,22 @@
 import React, { useEffect } from "react";
 import Grid from '@material-ui/core/Grid';
-import { useStyles } from '../../utils/styles';
+import { useStyles, delaytrans } from '../../utils/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link } from "react-router-dom";
 import Dumb from '../../component/dumb/Dumb';
 import Fade from 'react-reveal/Fade';
-import Pulse from 'react-reveal/Pulse';
 
 const Tuto = () => {
 
     const classes = useStyles();
     useEffect(() => {
-        window.scrollTo(0, 0)
+        setTimeout(() => {
+            window.scrollTo(0, 0)           
+        }, delaytrans);
     }, []);
     return (
-            <Grid container justify='center' className={`${classes.drawbg} ${classes.tutobg}`}>
+            <Grid container justify='center' className={`${classes.tutobg}`}>
                 <Grid item xs={12} className={`${classes.center}`}>
                     <Fade top>
                         <Typography variant="h4" component="h1" className={classes.titletuto}>

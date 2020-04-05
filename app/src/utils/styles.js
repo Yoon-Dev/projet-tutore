@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 export const marge = 8;
+export const delaytrans = 200;
 
 export const useStyles = makeStyles((theme) => ({
     // ++++++++++++++++++++++++++++++++++++++++++
@@ -29,6 +30,7 @@ export const useStyles = makeStyles((theme) => ({
         backgroundImage: 'url("./img/front2.jpg")',
         backgroundSize: 'cover',
         paddingTop: `${marge*8}px`,
+        position: 'absolute'
     },
     flexXend: {
         display: 'flex',
@@ -42,6 +44,12 @@ export const useStyles = makeStyles((theme) => ({
             display: 'flex',
             justifyContent: 'center'
         },
+    },
+    page: {
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        right: '0'
     },
     // FIN utils
     // ******************************************

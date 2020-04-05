@@ -4,6 +4,8 @@ import { useStyles } from '../../utils/styles';
 import ShortNews from '../../component/short-news/ShortNews';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
+import Loader from '../../component/loader/Loader';
+
 const LastNewsShort = () => {
 
     const [loading, setLoading] = useState(true);
@@ -12,6 +14,7 @@ const LastNewsShort = () => {
     const classes = useStyles();
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     useEffect(() => {
+        console.log(loading)
         if(articles){
             setLoading(false)
             setShortnews(createShortNews(articles))
@@ -19,7 +22,7 @@ const LastNewsShort = () => {
         return () => {
             console.log('cleanup')
         };
-    }, [articles]);
+    }, [articles, loading]);
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 // Create Short News
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
@@ -34,7 +37,7 @@ const LastNewsShort = () => {
     return(
         <Grid container justify='center'>
             <Card className={classes.boxshadow}>
-                { loading ? "loading..." : shortnews }
+                { loading ? <Loader/> : shortnews  }
             </Card>
                 
                 

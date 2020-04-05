@@ -4,9 +4,9 @@ import News from '../../component/news/News';
 import Grid from '@material-ui/core/Grid';
 import { useParams, Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
-import { useStyles } from '../../utils/styles';
+import { useStyles, delaytrans } from '../../utils/styles';
 import Fade from 'react-reveal/Fade';
-import Jump from 'react-reveal/Jump';
+import Loader from '../../component/loader/Loader';
 
 const SingleNew = () => {
 
@@ -25,6 +25,11 @@ const SingleNew = () => {
             console.log('cleanup')
         };
     }, [articles, id]);
+    useEffect(() => {
+        setTimeout(() => {
+            window.scrollTo(0, 0)            
+        }, delaytrans);
+    }, []);
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 // Create News
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
@@ -36,7 +41,7 @@ const SingleNew = () => {
     return(
         <Grid container justify='center' className={`${classes.drawbg} ${classes.containersingle} ${classes.childcenter}`}>
             <Fade top>
-                { loading ? "loading..." : news }
+                { loading ? <Loader/> : news }
             </Fade>    
             <Grid item xs={12} className={`${classes.center} ${classes.sndbtn}`}>
                 <Fade bottom>

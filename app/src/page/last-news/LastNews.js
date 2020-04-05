@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import Grid from '@material-ui/core/Grid';
 import { useNews } from '../../services/Article';
 import News from '../../component/news/News';
-import { useStyles } from '../../utils/styles';
+import { useStyles, delaytrans } from '../../utils/styles';
 import Fade from 'react-reveal/Fade';
+import Loader from '../../component/loader/Loader';
 
 const LastNews = () => {
     const classes = useStyles();
@@ -20,7 +21,9 @@ const LastNews = () => {
         };
     }, [articles]);
     useEffect(() => {
-        window.scrollTo(0, 0)
+        setTimeout(() => {
+            window.scrollTo(0, 0)            
+        }, delaytrans);      
     }, []);
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
@@ -32,10 +35,13 @@ const LastNews = () => {
         );
         return news;   
     }
+
+// °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+// °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     return(
         <Grid container justify='center' className={`${classes.drawbg} ${classes.childcenter}`}>
-            <Fade bottom>          
-                { loading ? "loading..." : news }
+            <Fade bottom>  
+                { loading ? <Loader/> : news }
             </Fade>
         </Grid>
     )
