@@ -16,9 +16,6 @@ const LastNews = () => {
             setLoading(false)
             setNews(createNews(articles))
         }
-        return () => {
-            console.log('cleanup')
-        };
     }, [articles]);
     useEffect(() => {
         setTimeout(() => {

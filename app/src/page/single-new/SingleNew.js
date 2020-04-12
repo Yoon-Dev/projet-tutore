@@ -21,9 +21,6 @@ const SingleNew = () => {
             setLoading(false)
             setNews(createSingleNew(articles, id))
         }
-        return () => {
-            console.log('cleanup')
-        };
     }, [articles, id]);
     useEffect(() => {
         setTimeout(() => {

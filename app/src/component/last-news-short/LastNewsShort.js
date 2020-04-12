@@ -14,14 +14,10 @@ const LastNewsShort = () => {
     const classes = useStyles();
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
     useEffect(() => {
-        console.log(loading)
         if(articles){
             setLoading(false)
             setShortnews(createShortNews(articles))
         }
-        return () => {
-            console.log('cleanup')
-        };
     }, [articles, loading]);
 // °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 // Create Short News

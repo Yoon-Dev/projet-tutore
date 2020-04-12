@@ -8,7 +8,6 @@ import Grid from '@material-ui/core/Grid';
 import { useStyles } from '../../utils/styles';
 
 const News = props => {
-    console.log(props)
     const classes = useStyles();
     return(
             <Grid item lg={7} xs={12} className={classes.mnews}>  
@@ -40,7 +39,7 @@ const News = props => {
                     <Grid container justify='center'>
                         <Grid item xs={12} className={`${classes.center} ${classes.mbtn}`}>
                             <CardActions>
-                                <Button variant="contained" color="primary"><a href={props.data.lien} className={classes.link}>Voir l'article en detail</a></Button>
+                                <Button variant="contained" color="primary"><a href={props.data.lien} className={classes.link}>Voir l'article en détail</a></Button>
                             </CardActions>
                         </Grid>
                     </Grid>

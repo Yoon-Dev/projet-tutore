@@ -20,10 +20,6 @@ const useArticles = () =>{
         fetchData('./fake-api.json').then(res => {
             setArticles({...res}); 
         })
-        return () => {
-            // cleanup
-            console.log('cleanup')
-        };
     }, []);
 
     return articles;

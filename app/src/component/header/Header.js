@@ -48,7 +48,7 @@ export default function Header() {
                         </Grid>
                         <Grid item xs={2} md={10} className={`${classes.itemhead} ${classes.flexXend}`}> 
                             <Link to="/tuto" className={classes.link}>
-                                <Button>Comment vérifié l'information ?</Button>
+                                <Button>Comment vérifier l'information ?</Button>
                             </Link>
                         </Grid>
                         <Grid item xs={10} className={`${classes.menuhide}`}> 
